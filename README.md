@@ -43,7 +43,7 @@ Uma implementação em linhagem `PHP` encontra-se disponível no seguinte reposi
 
 # Agradecimentos
 
-Agradecimentos ao [@victor-torres](https://github.com/victor-torres) e seus contribuidores por disponibilizar a [implementação em Python da API](https://github.com/victor-torres/sinesp-client/), a qual serviu como base para o surgimento desta em linguagem [PHP](http://www.php.net/).
+Agradecimentos ao [@victor-torres](https://github.com/victor-torres) e seus contribuidores por disponibilizar a [implementação em Python da API](https://github.com/victor-torres/sinesp-client/), a qual serviu como base para o surgimento desta em linguagem [C#]
 
 Agradecimentos também ao [@ricardotominaga](https://github.com/ricardotominaga) por disponibilizar a secret key.
 
