@@ -13,7 +13,9 @@ namespace ConsultaSinesp
 {
     public class DebitosVeiculo
     {
-
+        public string codigoRetorno { get; set; }
+        public string mensagemRetorno { get; set; }
+        public string codigoSituacao { get; set; }
         public string situacao { get; set; }
         public string modelo { get; set; }
         public string marca { get; set; }

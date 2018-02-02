@@ -22,7 +22,9 @@ namespace ConsultaSinesp
             IEnumerable<XElement> responses = doc.Descendants("return");
             foreach (XElement response in responses)
             {
-
+                debitos.mensagemRetorno = (string)response.Element("mensagemRetorno");
+                debitos.codigoSituacao = (string)response.Element("codigoSituacao");
+                debitos.codigoRetorno = (string)response.Element("codigoRetorno");
                 debitos.situacao = (string)response.Element("situacao");
                 debitos.modelo = (string)response.Element("modelo");
                 debitos.marca = (string)response.Element("marca");
@@ -33,7 +35,9 @@ namespace ConsultaSinesp
                 debitos.uf = (string)response.Element("uf");
                 debitos.municipio = (string)response.Element("municipio");
             }
-
+            Console.WriteLine(debitos.mensagemRetorno);
+            Console.WriteLine(debitos.codigoSituacao);
+            Console.WriteLine(debitos.codigoRetorno);
             Console.WriteLine(debitos.situacao);
             Console.WriteLine(debitos.modelo);
             Console.WriteLine(debitos.marca);
