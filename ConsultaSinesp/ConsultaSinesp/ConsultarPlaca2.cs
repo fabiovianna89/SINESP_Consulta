@@ -28,8 +28,8 @@ namespace ConsultaSinesp
     }
     public class ConsultarPlaca2
     {
-        private string secret = "#8.1.0#Mw6HqdLgQsX41xAGZgsF";
-        private string url = "https://189.9.194.154/sinesp-cidadao/mobile/consultar-placa/v3";
+        private string secret = "#8.1.0#g8LzUadkEHs7mbRqbX5l";
+        private string url = "https://189.9.194.154/sinesp-cidadao/mobile/consultar-placa/v4";
         private string proxy = null;
         private string placa = "";
         private string response = "";
