@@ -28,8 +28,8 @@ namespace ConsultaSinesp
     }
     public class ConsultarPlaca2
     {
-        private string secret = "#8.1.0#g8LzUadkEHs7mbRqbX5l";
-        private string url = "https://189.9.194.154/sinesp-cidadao/mobile/consultar-placa/v4";
+        private string secret = "#8.1.0#0KnlVSWHxOih3zKXBWlo";
+        private string url = "https://cidadao.sinesp.gov.br/sinesp-cidadao/mobile/consultar-placa/v5";
         private string proxy = null;
         private string placa = "";
         private string response = "";
@@ -91,20 +91,19 @@ namespace ConsultaSinesp
 
                 postConsultaComParametros.Append("<v:Envelope xmlns:i='http://www.w3.org/2001/XMLSchema-instance' xmlns:d='http://www.w3.org/2001/XMLSchema' xmlns:c='http://schemas.xmlsoap.org/soap/encoding/' xmlns:v='http://schemas.xmlsoap.org/soap/envelope/'>");
                 postConsultaComParametros.Append("<v:Header>                                                                  ");
-                postConsultaComParametros.Append("<b>Google Android SDK built for x86</b>                                                     ");
+                postConsultaComParametros.Append("<b>motorola</b>                                                     ");
                 postConsultaComParametros.Append("<c>ANDROID</c>                                                              ");
                 postConsultaComParametros.Append("<d>8.1.0</d>                                                                ");
-
-                postConsultaComParametros.Append("<e>4.3.2</e>                                                                ");
-                postConsultaComParametros.Append("<f>10.0.2.15</f>                                                             ");
-                postConsultaComParametros.Append("<g>" + hmac2 + "</g>                                                                   ");
-
-                postConsultaComParametros.Append("<h>0.0</h>                                                                   ");
-                postConsultaComParametros.Append("<i>0.0</i>                                                                   ");
+                postConsultaComParametros.Append("<e>4.7.4</e>                                                                ");
+                postConsultaComParametros.Append("<f>10.0.0.1</f>                                                             ");
+                postConsultaComParametros.Append("<g>" + hmac2 + "</g>                                                        ");
+                postConsultaComParametros.Append("<h>0</h>                                                                   ");
+                postConsultaComParametros.Append("<i>0</i>                                                                   ");
                 postConsultaComParametros.Append("<k></k>                                                                     ");
                 postConsultaComParametros.Append("<l>" + String.Format("{0:yyyy-MM-dd HH:mm:ss}", DateTime.Now) + "</l>");
                 postConsultaComParametros.Append("<m>8797e74f0d6eb7b1ff3dc114d4aa12d3</m>                                     ");
-                postConsultaComParametros.Append("</v:Header>                                                                 ");
+				postConsultaComParametros.Append("<n>li69ee1KY52</n>                                                          ");
+				postConsultaComParametros.Append("</v:Header>                                                                 ");
                 postConsultaComParametros.Append("<v:Body>                                                                    ");
                 postConsultaComParametros.Append("<n0:getStatus xmlns:n0='http://soap.ws.placa.service.sinesp.serpro.gov.br/'>");
                 postConsultaComParametros.Append("<a>" + placa + "</a>");
@@ -112,17 +111,16 @@ namespace ConsultaSinesp
                 postConsultaComParametros.Append("</v:Body>");
                 postConsultaComParametros.Append("</v:Envelope>");
 
-
-
-
-
                 var data = Encoding.ASCII.GetBytes(postConsultaComParametros.ToString());
                 httpPostConsulta.Method = "POST";
-                httpPostConsulta.ContentType = "text/xml;charset=utf-8";
-                httpPostConsulta.ContentLength = data.Length;
-                httpPostConsulta.KeepAlive = false;
-
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
+                httpPostConsulta.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
+				httpPostConsulta.Accept = "text/plain, */*; q=0.01";				
+				httpPostConsulta.ContentLength = data.Length;
+				httpPostConsulta.UserAgent = "SinespCidadao / 3.0.2.1 CFNetwork / 758.2.8 Darwin / 15.0.0";
+				httpPostConsulta.Headers.Add("Authorization", "Token li69ee1KY52:APA91bEtwOpw_NZsSeBgdW5fmQsBf0CgDmZ0txJ5dAuyRQuW6ozSO2XpNuCYJhfOUrrbQACCIJ4dgsGQ6fqD4GJB19cE2vHqcvOJueW6xl6Vd4YgjWQBh91Xin82JvW_pBLHOw6Cvo9j ");
+				httpPostConsulta.KeepAlive = false;
+				
+				ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls11;
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
